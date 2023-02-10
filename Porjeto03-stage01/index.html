@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="rectangle"></div>
+
+	<header>
+		<h1>
+			Crie e comparitlhe <br> seu evento
+		</h1>
+
+		<p>
+			O primeiro passo, é preencheer esse <br> formulário de insrição
+		</p>
+	</header>
+
+	<form id="my-form">
+		<fieldset>
+			<div id="eventInfo">
+				<legend>Informações do Evento</legend>
+
+				<div class="inputWrapper">
+					<label for="eventTitle">Título do evento<span>(mínimo 8 caracteres)</span></label>
+					<input id="eventTitle" minlength="8" type="textLabel" required>
+				</div>		
+
+				<div class="inputWrapper">
+					<label for="eventLink">Link do evento<span>(comece com https://)</span></label>
+					<input id="eventLink" type="url"  pattern="https?://.+" title="Include http://" required>
+				</div>
+
+				<div class="inputWrapper">
+					<label for="whatsapp">Whatsapp para contato<span>(soemente números)</span></label>
+					<input id="whatsapp" type="tel" pattern="(?=.*[0-9]).{2}([9+])(?=.*[0-9]).{8}" required>
+				</div>
+
+				<div class="inputWrapper">
+					<label for="eventTitle">Informações extras</label>
+					<textarea name="extraInfo"></textarea>
+				</div>
+
+				<div class="inputWrapper">
+					<label for="category">Categoria</label>
+					<select id="category" required>
+						<option class="placeHolder" value="" disabled selected>Tipo de evento</option>
+						<option class="options" value="party">Festa</option>
+						<option class="options" value="picnic">Piquinique</option>
+						<option class="options" value="tour">Passeio</option>
+						<option class="options" value="music-show">Show de música</option>
+						<option class="options" value="mentorship">Mentoria</option>
+					</select>
+				</div>
+
+			</div>
+
+			<div id="privacy">
+				<legend>Privacidade</legend>
+
+				<div class="inputWrapper">
+					<label for="adminE-mail">E-mail do administrador<span>(digite um email válido)</span></label>
+					<input id="adminE-mail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+				</div>
+
+				<div class="inputWrapper">
+					<label for="eventPassword">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
+					<input id="eventPassword" minlength="8" type="password" required>
+				</div>
+
+
+				<div id="checkboxWrapper">
+					<input  type="checkbox"  id="privCheckbox" required>
+					<label id="privCheckboxLabel" for="checkbox">Evento privado</label>
+				</div>
+			</div>
+
+			<div id="dayAndTime">
+				<legend>Dia e Hora</legend>
+				<div id="dayAndTimeWrapper">
+					<div class="inputWrapper">
+						<label for="day">Data</label>
+						<input id="day" type="date" required >
+					</div>
+					
+					<div class="inputWrapper">
+						<label for="begin">Das</label>
+						<input id="begin" type="time" required>
+					</div>
+
+					<div class="inputWrapper">
+						<label for="end">Até</label>
+						<input id="end" type="time" required>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<footer>
+		<input id="submit" form="my-form" type="submit" value="Salvar evento">
+	</footer>
+
+</body>
+</html>
